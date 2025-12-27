@@ -13,11 +13,17 @@ const SheetTrigger = SheetPrimitive.Trigger
 
 const SheetClose = SheetPrimitive.Close
 
+// ✅ FIXED: Wrap children in a div with the className
 const SheetPortal = ({
   className,
+  children,
   ...props
 }: SheetPrimitive.DialogPortalProps) => (
-  <SheetPrimitive.Portal className={cn(className)} {...props} />
+  <SheetPrimitive.Portal {...props}>
+    <div className={cn(className)}>
+      {children}
+    </div>
+  </SheetPrimitive.Portal>
 )
 SheetPortal.displayName = SheetPrimitive.Portal.displayName
 
