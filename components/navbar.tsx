@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { BsGithub } from "react-icons/bs";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "./mode-toggle";
 import { LuMenu } from "react-icons/lu";
@@ -30,18 +29,6 @@ export default function Navbar({ }): any {
             </div>
             <div className="items-center hidden gap-2 md:flex">
                 <ModeToggle />
-                <Link href="https://github.com/benlhachemi/modifio.git">
-                    <Button
-                        variant="default"
-                        className="items-center hidden gap-2 bg-orange-600 rounded-full w-fit md:flex"
-                        size="lg"
-                    >
-                        <span>Github Repo</span>
-                        <span className="text-xl">
-                            <BsGithub />
-                        </span>
-                    </Button>
-                </Link>
             </div>
             {/* MOBILE NAV */}
             <Sheet>
