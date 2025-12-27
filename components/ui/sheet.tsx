@@ -13,12 +13,17 @@ const SheetTrigger = SheetPrimitive.Trigger
 
 const SheetClose = SheetPrimitive.Close
 
-// ✅ FIXED: Wrap children in a div with the className
+// ✅ Define a custom interface that includes className and children
+interface SheetPortalProps extends SheetPrimitive.DialogPortalProps {
+  className?: string
+  children?: React.ReactNode
+}
+
 const SheetPortal = ({
   className,
   children,
   ...props
-}: SheetPrimitive.DialogPortalProps) => (
+}: SheetPortalProps) => (
   <SheetPrimitive.Portal {...props}>
     <div className={cn(className)}>
       {children}
